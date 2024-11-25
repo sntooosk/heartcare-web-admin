@@ -5,14 +5,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
 import { UserLoadingComponent } from '../user-loading/user-loading.component';
 import { FormsModule } from '@angular/forms';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
   imports: [
-    MatToolbar,
-    MatList,
-    MatListItem,
+    MatIcon,
     MatProgressBarModule,
     CommonModule,
     FormsModule,

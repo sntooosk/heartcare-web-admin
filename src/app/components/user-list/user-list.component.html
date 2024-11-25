@@ -20,11 +20,16 @@
       class="flex items-center p-3 hover:bg-gray-700 rounded-md cursor-pointer transition-colors duration-150 mb-2"
       (click)="selectUser.emit(user)"
     >
-      <img
-        [src]="getUserPhoto(user)"
-        alt="Foto do usuário"
-        class="w-10 h-10 rounded-full shadow-md"
-      />
+      <ng-container *ngIf="getUserPhoto(user); else defaultIcon">
+        <img
+          [src]="getUserPhoto(user)"
+          alt="Foto do usuário"
+          class="w-10 h-10 rounded-full shadow-md"
+        />
+      </ng-container>
+      <ng-template #defaultIcon>
+        <mat-icon class="w-10 h-10 text-white">person</mat-icon>
+      </ng-template>
       <span class="ml-4 text-white text-base font-medium">
         {{ user }}
       </span>
